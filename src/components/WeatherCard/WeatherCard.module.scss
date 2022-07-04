@@ -1,0 +1,102 @@
+.Container{
+  margin: 0px;
+  padding: 20px;
+  max-width: 80%;
+  min-width: 60%;
+  max-height: 80vh;
+  min-height: 60vh;
+  background: url("https://avatanplus.com/files/resources/mid/58da8088597dd15b158614af.jpg");
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  .mySwiper{
+    width: 80%;
+    .SwiperSlide{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+// .Container::after{
+//   content: '';
+//   position: absolute;
+//   border-radius: 10px;
+//   top: 0%;
+//   left: 0%;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 2;
+//   background-color: rgba(255, 255, 255, 0.322);
+// }
+.card{
+  position: relative;
+  width: 100%;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 5;
+  .cardHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .mainInfo{
+      width: 50%;
+    }
+    .weatherCity{
+      font-size: 25px;
+    }
+    
+    .weatherDate{
+      font-size: 12px;
+      font-weight: 400;
+    }
+    .weatherDegree{
+      display: flex;
+      flex-direction: column;
+      .weatherMidDeg{
+        font-size: 60px;
+        margin: 0px;
+        font-weight: 200;
+      }
+      .lessDegree{
+        color: blue;
+      }
+    }
+  }
+  .cardFooter{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .weatherNav{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      ul{
+        width: 80%;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0px;
+      }
+      hr{
+        margin: 0px;
+        width: 80%;
+      }
+    }
+    .watherDaily{
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+  }  
+}
