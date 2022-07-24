@@ -3,7 +3,8 @@
   padding: 20px;
   max-width: 80%;
   min-width: 60%;
-  max-height: 80vh;
+  max-height: 100vh;
+  height: 90vh;
   min-height: 60vh;
   background: url("https://avatanplus.com/files/resources/mid/58da8088597dd15b158614af.jpg");
   border-radius: 10px;
@@ -44,6 +45,11 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    img{
+      object-fit: cover;
+      width: 100px;
+      margin: 0px;
+    }
     .mainInfo{
       width: 50%;
     }
@@ -52,7 +58,7 @@
     }
     
     .weatherDate{
-      font-size: 12px;
+      font-size: 30px;
       font-weight: 400;
     }
     .weatherDegree{
@@ -76,7 +82,6 @@
     .weatherNav{
       display: flex;
       align-items: center;
-      flex-direction: column;
       justify-content: center;
       ul{
         width: 80%;
@@ -85,6 +90,19 @@
         align-items: center;
         justify-content: space-evenly;
         margin: 0px;
+        li{
+          cursor: pointer;
+        }
+        :hover{
+          border-bottom: 2px rgb(255, 255, 255) solid;
+        }
+      }
+      ol{
+        width: 30%;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       hr{
         margin: 0px;
@@ -99,4 +117,20 @@
       flex-wrap: wrap;
     }
   }  
+}
+@media screen and(max-width:623px){
+  .weatherNav{
+    flex-direction: column;
+  }
+}
+
+@media screen and(max-width: 500px){
+
+  .weatherNav{
+    ul{
+      li{
+        font-size: 13px;
+      }
+    }
+  }
 }
