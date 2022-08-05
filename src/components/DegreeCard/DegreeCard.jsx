@@ -1,9 +1,12 @@
 import cls from './DegreeCard.module.scss'
 import React from 'react'
-const DegreeCard = ({ props, temp, stringTime }) => {
-  const icon = props.weather.map(item => {return item.icon })
+const DegreeCard = ({ props, temp, stringTime, onClickIndivid }) => {
+  const icon = React.useMemo(() => {
+    return props.weather.map(item => {return item.icon})
+  }, [props.weather])
+
   return (
-    <div className={cls.weatherItemHourly}>
+    <div onClick={onClickIndivid} className={cls.weatherItemHourly}>
 
       <p className={cls.weatherTime}>
         {stringTime}

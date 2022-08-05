@@ -1,36 +1,53 @@
 .Container{
   margin: 0px;
   padding: 20px;
-  max-width: 80%;
-  min-width: 60%;
-  max-height: 100vh;
-  height: 90vh;
-  min-height: 60vh;
+  width: 80%;
+  height: 80vh;
   background: url("https://avatanplus.com/files/resources/mid/58da8088597dd15b158614af.jpg");
   border-radius: 10px;
   background-position: center;
   background-size: cover;
   position: relative;
+  overflow: hidden;
   .mySwiper{
     width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     .SwiperSlide{
+      width: 20%;
+      margin-right: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
   }
 }
-// .Container::after{
-//   content: '';
-//   position: absolute;
-//   border-radius: 10px;
-//   top: 0%;
-//   left: 0%;
-//   width: 100%;
-//   height: 100%;
-//   z-index: 2;
-//   background-color: rgba(255, 255, 255, 0.322);
-// }
+.ldsdualring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.ldsdualring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .card{
   position: relative;
   width: 100%;
@@ -117,6 +134,21 @@
       flex-wrap: wrap;
     }
   }  
+}
+@media screen and(max-width:753px){
+  .mySwiper{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .SwiperSlide{
+      width: 35% !important; 
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 @media screen and(max-width:623px){
   .weatherNav{

@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { API_KEY, BASE_URL } from '../../api/api'
 
 export const fetchWeather = createAsyncThunk(
   'hourlyWeather/fetchWeather',
   async function(state, { rejectWithValue }){
     try{
-      const response = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=42.882004&lon=74.582748&appid=4002c9bf4f3883a9b0fa82e18a970207')
+      const response = await fetch(`${BASE_URL}?lat=42.882004&lon=74.582748&appid=${API_KEY}`)
 
       if(!response.ok){
         throw new Error('Server Error')
@@ -17,7 +18,6 @@ export const fetchWeather = createAsyncThunk(
   },
 )
 //TODO : create new files to sepparate the async functions
-
 const appSlice = createSlice({
   name :'app',
   initialState :{
@@ -29,9 +29,11 @@ const appSlice = createSlice({
       lon: '74.582748',
       timezone: '',
     },
+    modalIsOpen: false,
+    modalData: null,
   },
   reducers: {
-    notWorkingLaziShit : (state) => {
+    lazyMan: (state) => {
       console.log(state)
     },
   },
@@ -53,5 +55,5 @@ const appSlice = createSlice({
     },
   },
 })
-export const { fillWeatherData } = appSlice.actions
+export const { fillWeatherData  } = appSlice.actions
 export default appSlice.reducer
